@@ -12,8 +12,8 @@ public class Main {
         System.out.print("Введите вес товара (в кг.):");     
         int weight = scanner.nextInt();
 
-        double tax_exact = CustomsService.calculateCustoms(price, weight);
-        int tax = (int) tax_exact;
+        double taxExact = CustomsService.calculateCustoms(price, weight);
+        int tax = (int) taxExact;
         System.out.print("Размер пошлины (в руб.) составит: " + tax + " руб.");
     }
 }
