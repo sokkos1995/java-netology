@@ -28,12 +28,11 @@ public class Main {
                         break;
                     case 180:
                         rotatedColors[i][j] = colors[colors.length - 1 - i][colors.length - 1 - j];
-                    break;
+                        break;
                     case 270:
                         rotatedColors[i][j] = colors[j][colors.length - 1 - i];
                         break;
                 }
-
             }
         }       
         return rotatedColors;   
