@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 class Main { 
 
-    public static int earnings = 0;
-    public static int spendings = 0;
+    public int earnings = 0;
+    public int spendings = 0;
 
     public static int taxEarnings(int earnings) {
         int tax = earnings * 6 / 100;
