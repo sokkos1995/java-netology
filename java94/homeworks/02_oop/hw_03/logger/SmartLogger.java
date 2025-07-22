@@ -7,11 +7,10 @@ public class SmartLogger implements Logger {
     @Override
     public void log(String msg) {
         logCnt++;
-        String logType = "INFO";
-        if (msg.contains("error")) {
-            logType = "ERROR";
+        String logLevel = "INFO";
+        if (msg.toLowerCase().contains("error")) {
+            logLevel = "ERROR";
         }
-        LocalDateTime timestamp = LocalDateTime.now();
-        System.out.println(logType + "#" + logCnt + " [" + timestamp + "] " + msg);
+        System.out.println(logLevel + "#" + logCnt + " [" + LocalDateTime.now() + "] " + msg);
     }       
 }

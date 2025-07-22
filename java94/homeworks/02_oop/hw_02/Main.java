@@ -41,11 +41,25 @@ public class Main {
         System.out.println("Работаем с сделками");
 
         Deal[] deals = new Deal[3];
-        deals[0] = new Sale(20, 0, "телефон");
-        deals[1] = new Sale(100, 0, "компьютер");
-        deals[2] = new Expenditure(0, 40, "планшет");
+        deals[0] = new Sale(20, "телефон");
+        deals[1] = new Sale(100, "компьютер");
+        deals[2] = new Expenditure(40, "планшет");
 
         int delta = firstCompany.applyDeals(deals);
         System.out.println("Разницa доходов и расходов на момент старта уплаты налогов " + delta);
+
+        System.out.println("Проверка на некорректный ввод");
+        try {
+            deals[0] = new Sale(-20, "телефон");
+            delta = firstCompany.applyDeals(deals);     
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }        
+        try {
+            deals[0] = new Expenditure(0, "телефон");
+            delta = firstCompany.applyDeals(deals);     
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }           
     }
 }

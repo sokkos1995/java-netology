@@ -1,9 +1,10 @@
 package deals;
 
 public class Expenditure extends Deal {
-    public Expenditure(int debitChange, int creditChange, String comment) {
-        super(debitChange, creditChange, comment);
-        this.comment = "Покупка " + comment + " на " + creditChange + " руб.";
-        this.debitChange = 0;        
+    public Expenditure(int creditChange, String comment) {
+        super(0, creditChange, "Покупка " + comment + " на " + creditChange + " руб.");
+        if (creditChange <= 0) {
+            throw new IllegalArgumentException("Сумма покупки не может быть меньше или равна нулю");
+        }             
     }    
 }

@@ -26,9 +26,7 @@ public class Company {
             debit += amount;
         } else if (amount < 0) {
             credit += Math.abs(amount);
-        } else {
-            return; 
-        } 
+        }
     }
 
     public void payTaxes() {
@@ -39,13 +37,11 @@ public class Company {
     }
 
     public int applyDeals(Deal[] deals) {
-        int debitMinusCredit;
-
         for (int i = 0; i < deals.length; i++) {
             this.debit += deals[i].debitChange;
             this.credit += deals[i].creditChange;
         }
-        debitMinusCredit = debit - credit;
+        int debitMinusCredit = debit - credit;
         payTaxes();
 
         return debitMinusCredit;
